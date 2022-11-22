@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  api:
+    # image: golang:1.19-alpine
+    build:
+      context: .
+      dockerfile: ./api/go-dev.Dockerfile
+    container_name: api
+    ports:
+      - 8181:8181
+    volumes:
+      - './api:/app'
+    working_dir: /app/cmd
+    # command: go run main.go
